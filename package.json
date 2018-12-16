@@ -1,0 +1,21 @@
+{
+  "name": "rwd3",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "http-server src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/anthonkendel/rwd3.git"
+  },
+  "author": "Anthon Holmqvist",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/anthonkendel/rwd3/issues"
+  },
+  "homepage": "https://gitlab.com/anthonkendel/rwd3#readme",
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}
