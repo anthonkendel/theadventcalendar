@@ -6,13 +6,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <link rel="stylesheet" href="./main.css">
+  <link rel="stylesheet" type="text/css" href="./main.css">
+  <script defer src="./main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
 
-  <title>RWD3</title>
+  <title>Advent calendar 2019</title>
+
 </head>
 
 <body>
-  <h1>Hello World!</h1>
+  <div class="background"></div>
+  <nav></nav>
+  <main id="advent-calendar-app">
+    <section id="advent-calendar-description">
+      <header>
+        <h1>What is an advent calendar?</h1>
+      </header>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis consequuntur autem commodi quam placeat,
+        sint ullam iusto dolor quae? Reprehenderit, soluta amet inventore architecto omnis et adipisci id eum autem?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis consequuntur autem commodi quam placeat,
+        sint ullam iusto dolor quae? Reprehenderit, soluta amet inventore architecto omnis et adipisci id eum autem?
+      </p>
+    </section>
+    <section id="calendar-days" class="grid">
+      <section v-for="calendarDay in calendarDays" v-bind:key="calendarDay.dateOrdinal">
+        <header>
+          <h2>{{ calendarDay.dateOrdinal }} December</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate molestiae commodi dolorem molestias
+            porro dicta id, possimus, sed autem optio quia ullam maiores nemo hic vel repellat sequi labore deleniti?
+          </p>
+        </header>
+      </section>
+    </section>
+  </main>
+  <footer></footer>
 </body>
 
 </html>
