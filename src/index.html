@@ -33,15 +33,11 @@
     </section>
     <section id="calendar-days" class="section">
       <div class="grid">
-        <section v-for="calendarDay in calendarDays" v-bind:key="calendarDay.dateOrdinal">
-          <header>
-            <h2>{{ calendarDay.dateOrdinal }} December</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate molestiae commodi dolorem molestias
-              porro dicta id, possimus, sed autem optio quia ullam maiores nemo hic vel repellat sequi labore deleniti?
-            </p>
+        <article v-for="calendarDay in calendarDays" v-bind:key="calendarDay.dateOrdinal" class="calendar-day">
+          <header class="calendar-day-header">
+            <h4>{{ calendarDay.dateOrdinal }} december</h2>
           </header>
-        </section>
+        </article>
       </div>
     </section>
   </main>

@@ -14,7 +14,7 @@ html {
 }
 
 body {
-  background-color: hsl(0, 50%, 52%);
+  background-color: hsl(0, 0%, 100%);
   background-image: url("./assets/images/christmas.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -25,6 +25,20 @@ body {
   margin: 0 auto;
   max-width: 1200px;
   padding: 1em;
+}
+
+.calendar-day {
+  background-color: hsla(0, 0%, 100%, 0.5);
+  border-radius: 6em;
+  display: flex;
+  height: 6em;
+  padding: 1em;
+  width: 6em;
+}
+
+.calendar-day .calendar-day-header {
+  margin: auto;
+  text-align: center;
 }
 
 .grid {
