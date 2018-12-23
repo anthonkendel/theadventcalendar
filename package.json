@@ -16,6 +16,9 @@
   },
   "homepage": "https://gitlab.com/anthonkendel/rwd3#readme",
   "devDependencies": {
-    "http-server": "^0.11.1"
+    "eslint": "^5.11.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "http-server": "^0.11.1",
+    "prettier": "^1.15.3"
   }
 }
