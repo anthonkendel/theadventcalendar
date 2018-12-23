@@ -18,7 +18,7 @@
   <div class="background"></div>
   <nav></nav>
   <main id="advent-calendar-app">
-    <section id="advent-calendar-description">
+    <section id="advent-calendar-description" class="section">
       <header>
         <h1>What is an advent calendar?</h1>
       </header>
@@ -31,16 +31,18 @@
         sint ullam iusto dolor quae? Reprehenderit, soluta amet inventore architecto omnis et adipisci id eum autem?
       </p>
     </section>
-    <section id="calendar-days" class="grid">
-      <section v-for="calendarDay in calendarDays" v-bind:key="calendarDay.dateOrdinal">
-        <header>
-          <h2>{{ calendarDay.dateOrdinal }} December</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate molestiae commodi dolorem molestias
-            porro dicta id, possimus, sed autem optio quia ullam maiores nemo hic vel repellat sequi labore deleniti?
-          </p>
-        </header>
-      </section>
+    <section id="calendar-days" class="section">
+      <div class="grid">
+        <section v-for="calendarDay in calendarDays" v-bind:key="calendarDay.dateOrdinal">
+          <header>
+            <h2>{{ calendarDay.dateOrdinal }} December</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate molestiae commodi dolorem molestias
+              porro dicta id, possimus, sed autem optio quia ullam maiores nemo hic vel repellat sequi labore deleniti?
+            </p>
+          </header>
+        </section>
+      </div>
     </section>
   </main>
   <footer></footer>
