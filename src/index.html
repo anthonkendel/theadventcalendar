@@ -1,45 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./main.css" />
+    <script defer src="./main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
 
-  <link rel="stylesheet" type="text/css" href="./main.css">
-  <script defer src="./main.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+    <title>Advent calendar 2019</title>
+  </head>
 
-  <title>Advent calendar 2019</title>
+  <body>
+    <nav></nav>
+    <main id="advent-calendar-app">
+      <section id="advent-calendar-app-description" class="section">
+        <header><h1>What is an advent calendar?</h1></header>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis consequuntur autem
+          commodi quam placeat, sint ullam iusto dolor quae? Reprehenderit, soluta amet inventore
+          architecto omnis et adipisci id eum autem?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis consequuntur autem
+          commodi quam placeat, sint ullam iusto dolor quae? Reprehenderit, soluta amet inventore
+          architecto omnis et adipisci id eum autem?
+        </p>
+      </section>
+      <section id="calendar-days" class="section">
+        <div class="grid">
+          <button
+            v-for="calendarDay in calendarDays"
+            v-bind:key="calendarDay.dateOrdinal"
+            class="calendar-day"
+            v-on:click="openDialog(`${calendarDay.dateOrdinal} december`, calendarDay.dateQuote)"
+          >
+            {{ calendarDay.dateOrdinal }} december
+          </button>
+        </div>
+      </section>
 
-</head>
-
-<body>
-  <div class="background"></div>
-  <nav></nav>
-  <main id="advent-calendar-app">
-    <section id="advent-calendar-app-description" class="section">
-      <header>
-        <h1>What is an advent calendar?</h1>
-      </header>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis consequuntur autem commodi quam placeat,
-        sint ullam iusto dolor quae? Reprehenderit, soluta amet inventore architecto omnis et adipisci id eum autem?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis consequuntur autem commodi quam placeat,
-        sint ullam iusto dolor quae? Reprehenderit, soluta amet inventore architecto omnis et adipisci id eum autem?
-      </p>
-    </section>
-    <section id="calendar-days" class="section">
-      <div class="grid">
-        <button v-for="calendarDay in calendarDays" v-bind:key="calendarDay.dateOrdinal" class="calendar-day">
-          {{ calendarDay.dateOrdinal }} december
-        </button>
+      <div class="dialog-background" v-if="isDialogOpen" v-on:click="closeDialog()">
+        <aside class="dialog">
+          <header>
+            <h2>{{ dialogTitle }}</h2>
+          </header>
+          <p>{{ dialogBody }}</p>
+        </aside>
       </div>
-    </section>
-  </main>
-  <footer></footer>
-</body>
-
+    </main>
+    <footer></footer>
+  </body>
 </html>
