@@ -18,7 +18,7 @@
   <div class="background"></div>
   <nav></nav>
   <main id="advent-calendar-app">
-    <section id="advent-calendar-description" class="section">
+    <section id="advent-calendar-app-description" class="section">
       <header>
         <h1>What is an advent calendar?</h1>
       </header>
@@ -33,11 +33,9 @@
     </section>
     <section id="calendar-days" class="section">
       <div class="grid">
-        <article v-for="calendarDay in calendarDays" v-bind:key="calendarDay.dateOrdinal" class="calendar-day">
-          <header class="calendar-day-header">
-            <h4>{{ calendarDay.dateOrdinal }} december</h2>
-          </header>
-        </article>
+        <button v-for="calendarDay in calendarDays" v-bind:key="calendarDay.dateOrdinal" class="calendar-day">
+          {{ calendarDay.dateOrdinal }} december
+        </button>
       </div>
     </section>
   </main>
