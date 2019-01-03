@@ -41,14 +41,16 @@
         </div>
       </section>
 
-      <div class="dialog-background" v-if="isDialogOpen" v-on:click="closeDialog()">
-        <aside class="dialog">
-          <header>
-            <h2>{{ dialogTitle }}</h2>
-          </header>
-          <p>{{ dialogBody }}</p>
-        </aside>
-      </div>
+      <transition name="ease-in">
+        <div class="dialog-background" v-if="isDialogOpen" v-on:click="closeDialog()">
+          <aside class="dialog">
+            <header>
+              <h2>{{ dialogTitle }}</h2>
+            </header>
+            <p>{{ dialogBody }}</p>
+          </aside>
+        </div>
+      </transition>
     </main>
     <footer></footer>
   </body>

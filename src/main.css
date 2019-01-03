@@ -26,15 +26,16 @@ body {
   padding: 1em;
 }
 
+.ease-in-enter-active,
+.ease-in-leave-active {
+  -webkit-transition: opacity 300ms ease-in;
+  -moz-transition: opacity 300ms ease-in;
+  transition: opacity 300ms ease-in;
+}
 
-
-.dialog {
-  background-color: hsl(0, 0%, 100%);
-  border-radius: 1em;
-  margin: 40vh auto;
-  padding: 1em;
-  width: 60vw;
-  z-index: 11;
+.ease-in-enter,
+.ease-in-leave-to {
+  opacity: 0;
 }
 
 .dialog-background {
@@ -45,6 +46,15 @@ body {
   top: 0;
   width: 100%;
   z-index: 10;
+}
+
+.dialog {
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 1em;
+  margin: 40vh auto;
+  padding: 1em;
+  width: 60vw;
+  z-index: 11;
 }
 
 @media only screen and (min-width: 700px) {
