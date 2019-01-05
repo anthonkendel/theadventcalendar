@@ -42,8 +42,9 @@
       </section>
 
       <transition name="ease-in">
-        <div class="dialog-background" v-if="isDialogOpen" v-on:click="closeDialog()">
+        <div class="dialog-background" v-if="isDialogOpen">
           <aside class="dialog">
+            <button class="dialog-close-button" v-on:click="closeDialog()">&times;</button>
             <header>
               <h2>{{ dialogTitle }}</h2>
             </header>
