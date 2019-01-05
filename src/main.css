@@ -1,11 +1,20 @@
 /* Sort all lines ascending */
 
 .calendar-day {
+  background-color: hsl(0, 0%, 100%);
   border-radius: 0.2em;
+  border-color: transparent;
   height: 6em;
   text-align: center;
   vertical-align: middle;
   width: 6em;
+}
+
+.calendar-day:hover {
+  -moz-transition: background-color 200ms ease-in;
+  -webkit-transition: background-color 200ms ease-in;
+  background-color: hsl(0, 0%, 90%);
+  transition: background-color 200ms ease-in;
 }
 
 html {
@@ -25,18 +34,6 @@ body {
   margin: 0 auto;
   max-width: 80em;
   padding: 1em;
-}
-
-.ease-in-enter-active,
-.ease-in-leave-active {
-  -webkit-transition: opacity 200ms ease-in;
-  -moz-transition: opacity 200ms ease-in;
-  transition: opacity 200ms ease-in;
-}
-
-.ease-in-enter,
-.ease-in-leave-to {
-  opacity: 0;
 }
 
 .dialog-background {
@@ -76,7 +73,6 @@ body {
   }
 }
 
-
 .grid {
   display: grid;
   grid-column-gap: 1em;
@@ -105,4 +101,17 @@ body {
     grid-template-columns: repeat(4, auto);
     grid-template-rows: repeat(4, auto);
   }
+}
+
+/* Vue transition animations */
+.ease-in-enter-active,
+.ease-in-leave-active {
+  -moz-transition: opacity 200ms ease-in;
+  -webkit-transition: opacity 200ms ease-in;
+  transition: opacity 200ms ease-in;
+}
+
+.ease-in-enter,
+.ease-in-leave-to {
+  opacity: 0;
 }
