@@ -13,7 +13,7 @@
 .calendar-day:hover {
   -moz-transition: background-color 200ms ease-in;
   -webkit-transition: background-color 200ms ease-in;
-  background-color: hsl(0, 0%, 90%);
+  background-color: hsl(0, 0%, 80%);
   transition: background-color 200ms ease-in;
 }
 
@@ -29,7 +29,7 @@
 .dialog-close-button {
   background-color: transparent;
   border-color: transparent;
-  color: hsl(0, 0%, 70%);
+  color: hsl(0, 0%, 80%);
   float: right;
   font-size: 1.6em;
 }
