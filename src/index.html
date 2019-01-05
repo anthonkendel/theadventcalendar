@@ -13,9 +13,11 @@
   </head>
 
   <body>
+    <div class="background"></div>
+
     <nav></nav>
     <main id="advent-calendar-app">
-      <section id="advent-calendar-app-description" class="section">
+      <section id="advent-calendar-description" class="section">
         <header><h1>What is an advent calendar?</h1></header>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis consequuntur autem
@@ -28,7 +30,8 @@
           architecto omnis et adipisci id eum autem?
         </p>
       </section>
-      <section id="calendar-days" class="section">
+
+      <section id="advent-calendar-calendar-days" class="section">
         <div class="grid">
           <button
             v-for="calendarDay in calendarDays"
