@@ -103,6 +103,20 @@ body {
   height: 100%;
 }
 
+a:link {
+  color: hsl(190, 100%, 50%);
+}
+
+a:visited {
+  color: hsl(200, 100%, 50%);
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: hsl(210, 100%, 50%);
+}
+
 .section {
   margin: 0 auto;
   max-width: 80em;
