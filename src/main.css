@@ -10,11 +10,10 @@
   width: 6em;
 }
 
-.calendar-day:hover {
-  -moz-transition: background-color 200ms ease-in;
-  -webkit-transition: background-color 200ms ease-in;
+.calendar-day:hover,
+.calendar-day:focus,
+.calendar-day:active {
   background-color: hsl(0, 0%, 80%);
-  transition: background-color 200ms ease-in;
 }
 
 .dialog-background {
@@ -35,7 +34,9 @@
   font-size: 1.6em;
 }
 
-.dialog-close-button:hover {
+.dialog-close-button:hover,
+.dialog-close-button:focus,
+.dialog-close-button:active {
   color: hsl(0, 0%, 0%);
 }
 
