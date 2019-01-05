@@ -8,11 +8,13 @@ new Vue({
   el: '#advent-calendar-app',
   methods: {
     openDialog: function (dialogTitle, dialogBody) {
+      document.body.classList.add('dialog-open');
       this.isDialogOpen = true;
       this.dialogTitle = dialogTitle;
       this.dialogBody = dialogBody;
     },
     closeDialog: function () {
+      document.body.classList.remove('dialog-open');
       this.isDialogOpen = false;
       this.dialogTitle = '';
       this.dialogBody = '';
