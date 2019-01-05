@@ -28,6 +28,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  margin: 0;
 }
 
 .section {
@@ -38,7 +39,6 @@ body {
 
 .dialog-background {
   background-color: hsla(0, 0%, 0%, 0.4);
-  height: 100vh;
   left: 0;
   position: absolute;
   top: 0;
