@@ -110,11 +110,6 @@ html {
   height: 100%;
 }
 
-body {
-  margin: 0;
-  height: 100%;
-}
-
 a:link {
   color: hsl(190, 100%, 50%);
 }
