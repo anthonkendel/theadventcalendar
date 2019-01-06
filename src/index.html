@@ -16,7 +16,11 @@
     <div class="background"></div>
 
     <main id="advent-calendar-app">
-      <section id="advent-calendar-description" class="section">
+      <section
+        v-if="displayAdventCalendarDescription"
+        id="advent-calendar-description"
+        class="section"
+      >
         <header><h1>What is an Advent calendar?</h1></header>
         <p>
           An Advent calendar is a special calendar used to count the days of Advent in anticipation
@@ -57,7 +61,7 @@
       </section>
 
       <transition name="ease-in">
-        <div class="dialog-background" v-if="isDialogOpen">
+        <div v-if="isDialogOpen" class="dialog-background">
           <aside class="dialog">
             <button class="dialog-close-button" v-on:click="closeDialog()">&times;</button>
             <header>

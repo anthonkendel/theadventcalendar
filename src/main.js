@@ -6,35 +6,17 @@ function getNumberWithOrdinal(number) {
 
 new Vue({
   el: '#advent-calendar-app',
-  methods: {
-    openDialog: function(dateOrdinal, dialogBody) {
-      document.body.classList.add('dialog-open');
-      this.isDialogOpen = true;
-      this.dialogTitle = `${dateOrdinal} december`;
-      this.dialogBody = dialogBody;
-
-      const isDateOrdinalVisited = this.visitedCalendarDays[dateOrdinal]
-      if (!isDateOrdinalVisited) {
-        console.log(this.visitedCalendarDays);
-        this.visitedCalendarDays[dateOrdinal] = true;
-      }
-    },
-    closeDialog: function() {
-      document.body.classList.remove('dialog-open');
-      this.isDialogOpen = false;
-      this.dialogTitle = '';
-      this.dialogBody = '';
-    },
-  },
-  data: function() {
+  data: function () {
     return {
+      displayAdventCalendarDescription: true,
+      backgroundImageUrl: '',
+
       isDialogOpen: false,
       dialogTitle: '',
       dialogBody: '',
-      visitedCalendarDays: {},
 
-      calendarDays: [
-        {
+      visitedCalendarDays: {},
+      calendarDays: [{
           dateOrdinal: getNumberWithOrdinal(1),
           dateQuote: 'Lorem ipsum dolor sit amet, liber graeci consulatu ea vel.',
         },
@@ -52,8 +34,7 @@ new Vue({
         },
         {
           dateOrdinal: getNumberWithOrdinal(5),
-          dateQuote:
-            'Mea ex audiam deleniti, ius dicta everti ullamcorper at, erant melius est in.',
+          dateQuote: 'Mea ex audiam deleniti, ius dicta everti ullamcorper at, erant melius est in.',
         },
         {
           dateOrdinal: getNumberWithOrdinal(6),
@@ -85,8 +66,7 @@ new Vue({
         },
         {
           dateOrdinal: getNumberWithOrdinal(13),
-          dateQuote:
-            'Omnis quodsi aliquando ad mea, quas insolens expetendis nec cu, decore virtute ei has.',
+          dateQuote: 'Omnis quodsi aliquando ad mea, quas insolens expetendis nec cu, decore virtute ei has.',
         },
         {
           dateOrdinal: getNumberWithOrdinal(14),
@@ -134,5 +114,47 @@ new Vue({
         },
       ],
     };
+  },
+  created: function () {
+    this.loadConfiguration();
+  },
+  methods: {
+    loadConfiguration: function () {
+      fetch('./config.json')
+        .then((response) => {
+          return response.json();
+        })
+        .then((config) => {
+          this.backgroundImageUrl = config.backgroundImageUrl || this.backgroundImageUrl;
+          this.displayAdventCalendarDescription = config.displayAdventCalendarDescription;
+
+          const adventCalendarQuotes = config.adventCalendarQuotes;
+          adventCalendarQuotes.forEach((quote, index) => {
+            const calendarDay = this.calendarDays[index];
+            if (calendarDay) {
+              calendarDay.dateQuote = quote;
+            }
+          })
+        })
+        .catch(() => console.error('Could not find config.json. Website will fallback to default config.'));
+    },
+    openDialog: function (dateOrdinal, dialogBody) {
+      document.body.classList.add('dialog-open');
+      this.isDialogOpen = true;
+      this.dialogTitle = `${dateOrdinal} december`;
+      this.dialogBody = dialogBody;
+
+      const isDateOrdinalVisited = this.visitedCalendarDays[dateOrdinal]
+      if (!isDateOrdinalVisited) {
+        console.log(this.visitedCalendarDays);
+        this.visitedCalendarDays[dateOrdinal] = true;
+      }
+    },
+    closeDialog: function () {
+      document.body.classList.remove('dialog-open');
+      this.isDialogOpen = false;
+      this.dialogTitle = '';
+      this.dialogBody = '';
+    },
   },
 });
