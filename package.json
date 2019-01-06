@@ -1,20 +1,19 @@
 {
-  "name": "rwd3",
+  "name": "theadventcalendar",
   "version": "1.0.0",
-  "description": "",
   "scripts": {
-    "start": "http-server src"
+    "start": "http-server public"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/anthonkendel/rwd3.git"
+    "url": "git+ssh://git@gitlab.com/anthonkendel/theadventcalendar.git"
   },
   "author": "Anthon Holmqvist",
   "license": "MIT",
   "bugs": {
-    "url": "https://gitlab.com/anthonkendel/rwd3/issues"
+    "url": "https://gitlab.com/anthonkendel/theadventcalendar/issues"
   },
-  "homepage": "https://gitlab.com/anthonkendel/rwd3#readme",
+  "homepage": "https://gitlab.com/anthonkendel/theadventcalendar#readme",
   "devDependencies": {
     "eslint": "^5.11.0",
     "eslint-plugin-prettier": "^3.0.0",
