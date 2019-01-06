@@ -10,9 +10,9 @@
   width: 6em;
 }
 
-.calendar-day:hover,
-.calendar-day:focus,
-.calendar-day:active {
+.calendar-day:enabled:hover,
+.calendar-day:enabled:focus,
+.calendar-day:enabled:active {
   background-color: hsl(0, 0%, 80%);
 }
 
@@ -61,9 +61,9 @@
   font-size: 1.6em;
 }
 
-.dialog-close-button:hover,
-.dialog-close-button:focus,
-.dialog-close-button:active {
+.dialog-close-button:enabled:hover,
+.dialog-close-button:enabled:focus,
+.dialog-close-button:enabled:active {
   color: hsl(0, 0%, 0%);
 }
 

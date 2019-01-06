@@ -1,5 +1,5 @@
 function getNumberWithOrdinal(number) {
-  const ordinal = ["th", "st", "nd", "rd"];
+  const ordinal = ['th', 'st', 'nd', 'rd'];
   const value = number % 100;
   return number + (ordinal[(value - 20) % 10] || ordinal[value] || ordinal[0]);
 }
@@ -7,26 +7,34 @@ function getNumberWithOrdinal(number) {
 new Vue({
   el: '#advent-calendar-app',
   methods: {
-    openDialog: function (dialogTitle, dialogBody) {
+    openDialog: function(dateOrdinal, dialogBody) {
       document.body.classList.add('dialog-open');
       this.isDialogOpen = true;
-      this.dialogTitle = dialogTitle;
+      this.dialogTitle = `${dateOrdinal} december`;
       this.dialogBody = dialogBody;
+
+      const isDateOrdinalVisited = this.visitedCalendarDays[dateOrdinal]
+      if (!isDateOrdinalVisited) {
+        console.log(this.visitedCalendarDays);
+        this.visitedCalendarDays[dateOrdinal] = true;
+      }
     },
-    closeDialog: function () {
+    closeDialog: function() {
       document.body.classList.remove('dialog-open');
       this.isDialogOpen = false;
       this.dialogTitle = '';
       this.dialogBody = '';
     },
   },
-  data: function () {
+  data: function() {
     return {
       isDialogOpen: false,
       dialogTitle: '',
       dialogBody: '',
+      visitedCalendarDays: {},
 
-      calendarDays: [{
+      calendarDays: [
+        {
           dateOrdinal: getNumberWithOrdinal(1),
           dateQuote: 'Lorem ipsum dolor sit amet, liber graeci consulatu ea vel.',
         },
@@ -44,7 +52,8 @@ new Vue({
         },
         {
           dateOrdinal: getNumberWithOrdinal(5),
-          dateQuote: 'Mea ex audiam deleniti, ius dicta everti ullamcorper at, erant melius est in.',
+          dateQuote:
+            'Mea ex audiam deleniti, ius dicta everti ullamcorper at, erant melius est in.',
         },
         {
           dateOrdinal: getNumberWithOrdinal(6),
@@ -76,7 +85,8 @@ new Vue({
         },
         {
           dateOrdinal: getNumberWithOrdinal(13),
-          dateQuote: 'Omnis quodsi aliquando ad mea, quas insolens expetendis nec cu, decore virtute ei has.',
+          dateQuote:
+            'Omnis quodsi aliquando ad mea, quas insolens expetendis nec cu, decore virtute ei has.',
         },
         {
           dateOrdinal: getNumberWithOrdinal(14),
@@ -121,7 +131,7 @@ new Vue({
         {
           dateOrdinal: getNumberWithOrdinal(24),
           dateQuote: 'Ei has primis voluptaria.',
-        }
+        },
       ],
     };
   },

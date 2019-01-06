@@ -48,8 +48,9 @@
           <button
             v-for="calendarDay in calendarDays"
             v-bind:key="calendarDay.dateOrdinal"
+            v-bind:disabled="visitedCalendarDays[calendarDay.dateOrdinal]"
             class="calendar-day"
-            v-on:click="openDialog(`${calendarDay.dateOrdinal} december`, calendarDay.dateQuote)"
+            v-on:click="openDialog(calendarDay.dateOrdinal, calendarDay.dateQuote)"
           >
             {{ calendarDay.dateOrdinal }} december
           </button>
