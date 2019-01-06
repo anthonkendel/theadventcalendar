@@ -13,9 +13,9 @@
   </head>
 
   <body>
-    <div class="background"></div>
-
     <main id="advent-calendar-app">
+      <div v-bind:style="{ backgroundImage: backgroundImage }" class="background"></div>
+
       <section
         v-if="displayAdventCalendarDescription"
         id="advent-calendar-description"

@@ -6,10 +6,15 @@ function getNumberWithOrdinal(number) {
 
 new Vue({
   el: '#advent-calendar-app',
+  computed: {
+    backgroundImage: function () {
+      return `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${this.backgroundImageUrl}')`;
+    },
+  },
   data: function () {
     return {
       displayAdventCalendarDescription: true,
-      backgroundImageUrl: '',
+      backgroundImageUrl: './assets/images/christmas.jpg',
 
       isDialogOpen: false,
       dialogTitle: '',
@@ -116,16 +121,18 @@ new Vue({
     };
   },
   created: function () {
-    this.loadConfiguration();
+    this.loadConfig();
   },
   methods: {
-    loadConfiguration: function () {
+    loadConfig: function () {
       fetch('./config.json')
         .then((response) => {
           return response.json();
         })
         .then((config) => {
-          this.backgroundImageUrl = config.backgroundImageUrl || this.backgroundImageUrl;
+          console.log(config.backgroundImageUrl);
+
+          this.backgroundImageUrl = config.backgroundImageUrl;
           this.displayAdventCalendarDescription = config.displayAdventCalendarDescription;
 
           const adventCalendarQuotes = config.adventCalendarQuotes;
