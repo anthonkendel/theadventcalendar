@@ -13,13 +13,12 @@
   </head>
 
   <body>
-    <main id="advent-calendar-app">
+    <main id="advent-calendar-app" class="container">
       <div v-bind:style="{ backgroundImage: backgroundImage }" class="background"></div>
 
       <section
         v-if="displayAdventCalendarDescription"
-        id="advent-calendar-description"
-        class="section"
+        class="section advent-calendar-description"
       >
         <header><h1>What is an Advent calendar?</h1></header>
         <p>
@@ -46,7 +45,7 @@
         >
       </section>
 
-      <section id="advent-calendar-calendar-days" class="section">
+      <section class="section">
         <div class="grid">
           <button
             v-for="calendarDay in calendarDays"

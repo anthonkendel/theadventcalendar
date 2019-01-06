@@ -1,5 +1,11 @@
 /* All lines is sorted ascending */
 
+.advent-calendar-description {
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 0.2em;
+  margin-top: 2em;
+}
+
 .calendar-day {
   background-color: hsl(0, 0%, 100%);
   border-color: transparent;
@@ -9,6 +15,7 @@
   vertical-align: middle;
   width: 6em;
 }
+
 
 .calendar-day:enabled:hover,
 .calendar-day:enabled:focus,
@@ -71,10 +78,6 @@
   overflow: hidden;
 }
 
-#advent-calendar-description {
-  color: hsl(0, 0%, 100%);
-}
-
 .background {
   background-color: hsl(0, 0%, 100%);
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -89,6 +92,15 @@
   top: 0;
   width: 100%;
   z-index: -1;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 80em;
+}
+
+.section {
+  padding: 2em;
 }
 
 html {
@@ -115,12 +127,6 @@ a:hover,
 a:focus,
 a:active {
   color: hsl(210, 100%, 50%);
-}
-
-.section {
-  margin: 0 auto;
-  max-width: 80em;
-  padding: 2em;
 }
 
 .grid {
