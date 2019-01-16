@@ -16,11 +16,28 @@
   width: 6em;
 }
 
-
 .calendar-day:enabled:hover,
 .calendar-day:enabled:focus,
 .calendar-day:enabled:active {
   background-color: hsl(0, 0%, 80%);
+}
+
+.dialog-close-button {
+  background-color: transparent;
+  border-color: transparent;
+  color: hsl(0, 0%, 80%);
+  float: right;
+  font-size: 1.6em;
+}
+
+.dialog-close-button:enabled:hover,
+.dialog-close-button:enabled:focus,
+.dialog-close-button:enabled:active {
+  color: hsl(0, 0%, 0%);
+}
+
+.dialog-open {
+  overflow: hidden;
 }
 
 .dialog-background {
@@ -58,24 +75,6 @@
   .dialog {
     width: 30vw;
   }
-}
-
-.dialog-close-button {
-  background-color: transparent;
-  border-color: transparent;
-  color: hsl(0, 0%, 80%);
-  float: right;
-  font-size: 1.6em;
-}
-
-.dialog-close-button:enabled:hover,
-.dialog-close-button:enabled:focus,
-.dialog-close-button:enabled:active {
-  color: hsl(0, 0%, 0%);
-}
-
-.dialog-open {
-  overflow: hidden;
 }
 
 .background {
